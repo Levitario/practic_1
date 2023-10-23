@@ -1,0 +1,63 @@
+#Практика №1
+import string
+import random
+from random import sample
+
+print("Задание №1 \n")
+n = int(input("Укажите количество чисел: "))
+list = sample(range(-10, 10), n)
+print("Исходный список: ", list)
+list.reverse()
+print("Перевёрнутный список: ", list)
+
+print("\n Задание №2 \n")
+n_1 = int(input("Укажите количество чисел: "))
+list_first = sample(range(-10, 10), n_1)
+print("Список №1: ", list_first)
+list_second = sample(range(-10, 10), n_1)
+print("Список №2: ", list_second)
+list_result = list_first[::2] + list_second[1::2]
+print("Смешанный список: ", list_result)
+
+print("\n Задание №3 \n")
+k3 = int(input("Укажите количество чисел: "))
+list_int = sample(range(-10, 10), k3)
+list_dooble = [round(random.uniform(-99.999, 100), 2) for x in range(k3)]
+list_string  = 'd\nc\nc\ng\nw\nt'
+list_string = list_string.split()
+list_mixed = list_int + list_dooble + list_string
+random.shuffle(list_mixed)
+print("Список случайных значений: ", list_mixed)
+list_mixed2 = dict.fromkeys(list_mixed)
+res = [i for i in list_mixed2 if i is not None]
+print("Список без дубликатов: ", res)
+
+print("\n Задание №4 \n")
+dct = {}
+def slovar (dct):
+    for x in range(40):
+        dct[str(x)] = random.randint(0,9)
+    imp_dct = dct
+    print(dct)
+slovar(dct)
+
+print("\n Задание №5 \n")
+def ynical (imp_dct):
+    list_1 = []
+    list_2 = []
+    list_3 = []
+    result_list = []
+    for i in dct:
+        if dct[i] not in list_1:
+            list_2.append(dct[i])
+            list_1.append(dct[i])
+    for x in list_3:
+        list = []
+        for i in dct:
+            if x == dct[i]:
+                list.append(i)
+        list_3 = (x, list)
+        result_list.append(list_3)
+    print (result_list)
+imp_dct = slovar (dct)
+ynical(imp_dct)
